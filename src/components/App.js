@@ -5,7 +5,8 @@ class App extends  React.Component {
         return(
             <div>
                 <h3>Liste de courses</h3>
-                <div>En construction</div>
+                <Form />
+                <ItemList />
             </div>
         )
     }
