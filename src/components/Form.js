@@ -17,7 +17,6 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                <h3>this.props.title</h3>
                 <form onSubmit={this.handleSubmit}>
                     <input type="number" placeholder="quantité"
                            value={this.state.quantity} onChange={ (event)=>{this.setState({quantity:event.target.value})}}/>

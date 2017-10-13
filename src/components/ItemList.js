@@ -1,9 +1,13 @@
 import React from 'react'
 
-const ItemList = ()=>{
+const ItemList = (props) => {
 
     return(
-        <div>Itemlist component</div>
+        <div>{
+            props.articles.map(article => <div key={article.id}>{article.quantity} {article.name}</div>)
+        }
+
+        </div>
     )
 }
 

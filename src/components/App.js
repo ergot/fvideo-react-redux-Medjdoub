@@ -18,7 +18,7 @@ class App extends  React.Component {
         return(
             <div>
                 <h3>Liste de courses</h3>
-                <Form  formTitle={'yolo'} addArticle={this.addArticle}/>
+                <Form   addArticle={this.addArticle}/>
                 <ItemList  articles={this.state.articles}/>
             </div>
         )
