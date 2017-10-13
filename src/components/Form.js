@@ -11,6 +11,7 @@ class Form extends React.Component {
         event.preventDefault()
         console.log(this.props)
         this.props.addArticle(this.state)
+        this.setState({name:'', quantity:0})
     }
 
     render() {
