@@ -3,11 +3,16 @@ import Form from './Form'
 import ItemList from './ItemList'
 
 class App extends  React.Component {
+
+    addArticle (article){
+        console.log('article')
+    }
+
     render(){
         return(
             <div>
                 <h3>Liste de courses</h3>
-                <Form />
+                <Form  formTitle={'yolo'} addArticle={this.addArticle}/>
                 <ItemList />
             </div>
         )
