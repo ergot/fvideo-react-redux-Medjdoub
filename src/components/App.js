@@ -30,6 +30,7 @@ class App extends  React.Component {
     }
 } //end
 
+// Action creators:
 const addArticleActionCreator = (article) => {
     return {
         type: 'ADD_ARTICLE',
