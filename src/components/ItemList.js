@@ -7,7 +7,7 @@ const ItemList = (props) => {
         <div>
             {
             //props.articles.map(article => <div key={article.id}>{article.quantity} {article.name}</div>)
-            props.articles.map(article => <Article data={article} key={article.id}/>)
+            props.articles.map(article => <Article data={article} key={article.id} editArticle={props.editArticle}/>)
         }
 
         </div>

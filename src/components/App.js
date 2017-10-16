@@ -24,7 +24,7 @@ class App extends  React.Component {
             <div>
                 <h3>Liste de courses</h3>
                 <Form   addArticle={this.props.addArticle}/>
-                <ItemList  articles={this.props.articles}/>
+                <ItemList  articles={this.props.articles} editArticle={this.props.editArticle}/>
             </div>
         )
     }
@@ -34,6 +34,13 @@ class App extends  React.Component {
 const addArticleActionCreator = (article) => {
     return {
         type: 'ADD_ARTICLE',
+        payload: article
+    }
+}
+
+const editArticleActionCreator = (article) => {
+    return {
+        type: 'EDIT_ARTICLE',
         payload: article
     }
 }
@@ -49,6 +56,9 @@ const mapDispatchToProps = (dispatch) => {
         addArticle: (article) => {
             //dispatch({type: 'ADD_ARTICLE', payload: article})
             dispatch(addArticleActionCreator(article))
+        },
+        editArticle: (article) => {
+            dispatch(editArticleActionCreator(article))
         }
     }
 }

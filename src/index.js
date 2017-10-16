@@ -10,9 +10,16 @@ import App from './components/App'
 const articlesReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_ARTICLE':
-            console.log('')
             action.payload.id = Date.now();
             return [...state, action.payload]
+        case 'EDIT_ARTICLE':
+            const articleId = action.payload.id;
+            return state.map(article => {
+                if(article.id !== articleId) {
+                    return article
+                }
+                return action.payload
+            })
         default:
             return state;
     }
