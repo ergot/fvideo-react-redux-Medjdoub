@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './Form'
 import ItemList from './ItemList'
+import {connect} from 'react-redux'
 
 class App extends  React.Component {
 
@@ -23,6 +24,13 @@ class App extends  React.Component {
             </div>
         )
     }
+} //end
+
+const mapStateToProps = (state) => {
+    return {
+        articles : state.articles
+    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
+//export default connect(mapStateToProps, mapDispatchToProps)(App);

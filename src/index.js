@@ -22,4 +22,4 @@ const articlesReducer = (state = [], action) => {
 const store = createStore(combineReducers({articles:articlesReducer}),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-ReactDom.render(<Provider><App /></Provider>, document.getElementById('root'))
+ReactDom.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
