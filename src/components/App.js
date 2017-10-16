@@ -8,11 +8,15 @@ class App extends  React.Component {
 
     state = {articles: [] }
 
+    // addArticle = (article) => {
+    //     let oldArticles = this.state.articles
+    //     article.id = Date.now()
+    //     let newArticles = [...oldArticles, article]
+    //     this.setState({articles: newArticles})
+    // }
+
     addArticle = (article) => {
-        let oldArticles = this.state.articles
-        article.id = Date.now()
-        let newArticles = [...oldArticles, article]
-        this.setState({articles: newArticles})
+        this.props.dispatch({type: 'ADD_ARTICLE', payload: article})
     }
 
     render(){
@@ -20,7 +24,7 @@ class App extends  React.Component {
             <div>
                 <h3>Liste de courses</h3>
                 <Form   addArticle={this.addArticle}/>
-                <ItemList  articles={this.state.articles}/>
+                <ItemList  articles={this.props.articles}/>
             </div>
         )
     }
